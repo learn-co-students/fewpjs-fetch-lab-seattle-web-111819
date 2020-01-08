@@ -1,5 +1,7 @@
 function fetchBooks() {
-
+  return fetch('https://anapioficeandfire.com/api/books')  // a promise
+  .then(resp => resp.json() )  // receives a response & processes it & returns/converts content of response to JSON data
+  .then(json => renderBooks(json))  // do this to the JSON data. console.log(json) will print out in console. can call another fx/meth on it: renderBooks(json)
 }
 
 function renderBooks(json) {
